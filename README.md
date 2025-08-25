@@ -1,16 +1,11 @@
-# toodum
-
-A new Flutter project.
+# Toodum
+Your Toodum List!
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is a starting point for a To Do List application.
 
-A few resources to get you started if this is your first Flutter project:
+## Motivation
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+This is a To Do List application for portfolio purposes, i've been studying and working with flutter for some time and i decided to make this app in order to show these abilites that i've aquired and further develop them.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
