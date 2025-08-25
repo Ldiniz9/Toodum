@@ -6,12 +6,12 @@ Your Toodum List!
 This project is a starting point for a To Do List application.
 
 ## Tech
-Clean Architecture.
-Riverpod / state management.
-Shared Preferences and Get Storage / storage.
-Get It / dependency injection
-DotEnv / ambient control 
-Dio / API communication
+* Clean Architecture
+* Riverpod / state management
+* Shared Preferences and Get Storage / storage
+* Get It / dependency injection
+* DotEnv / ambient control
+* Dio / API communication
 
 ## Motivation
 

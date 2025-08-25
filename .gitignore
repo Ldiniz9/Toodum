@@ -33,6 +33,11 @@ migrate_working_dir/
 .pub/
 /build/
 
+# Arquivos gerados de injeção de dependências (Injectable)
+**/*.config.dart
+**/*.g.dart
+**/*.injectable.dart
+
 # Symbolication related
 app.*.symbols
 
