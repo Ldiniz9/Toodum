@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toodum/source/core/theme/theme.dart';
+import 'package:toodum/source/shared/widgets/app_drawer_widget.dart';
 
 class ToomWidget extends StatelessWidget {
   const ToomWidget({super.key});
@@ -11,7 +12,7 @@ class ToomWidget extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.black,
-      drawer: isWideScreen ? null : Drawer(),
+      drawer: isWideScreen ? null : Drawer(child: AppDrawerWidget()),
       appBar: isWideScreen
           ? null
           : AppBar(
@@ -24,14 +25,26 @@ class ToomWidget extends StatelessWidget {
                 ),
               ),
               title: Center(
-                child: Image.asset(ThemeBranding.verticalGold, width: 64),
+                child: Text(
+                  'TOODUM',
+                  style: ThemeTypography.bold56.apply(color: ThemeColors.secondary),
+                ),
               ),
               actions: [SizedBox(width: 48)],
             ),
-      body: Row(
-        children: [
-          Text('data', style: ThemeTypography.bold56.apply(color: ThemeColors.white),),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: Column(
+          spacing: 12,
+          children: [
+            Text('Toom 1', style: ThemeTypography.bold56.apply(color: ThemeColors.white),),
+            Text('Toom 2', style: ThemeTypography.bold56.apply(color: ThemeColors.white),),
+            Text('Toom 3', style: ThemeTypography.bold56.apply(color: ThemeColors.white),),
+            Text('Toom 4', style: ThemeTypography.bold56.apply(color: ThemeColors.white),),
+            Text('Toom 5', style: ThemeTypography.bold56.apply(color: ThemeColors.white),),
+            Text('Toom 6', style: ThemeTypography.bold56.apply(color: ThemeColors.white),),
+          ],
+        ),
       ),
     );
   }
