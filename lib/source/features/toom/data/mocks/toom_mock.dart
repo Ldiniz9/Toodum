@@ -11,5 +11,23 @@ final class ToomMock {
       'hunger': 50,
       'clean': 80,
     },
+    {
+      'id': '002',
+      'name': 'Toodum 2',
+      'description': 'Um CARRO de exemplo',
+      'skin': 'assets/images/marquin.png',
+      'stage': 'fledgling',
+      'hunger': 50,
+      'clean': 80,
+    },
+    {
+      'id': '003',
+      'name': 'Toodum 3',
+      'description': 'Um FADA de exemplo',
+      'skin': 'assets/images/lulu.png',
+      'stage': 'mature',
+      'hunger': 50,
+      'clean': 80,
+    },
   ];
 }

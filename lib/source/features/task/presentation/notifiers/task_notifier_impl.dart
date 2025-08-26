@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:toodum/source/features/task/data/usecases/get_task_usecase.dart';
+import 'package:toodum/source/features/task/domain/usecases/get_task_usecase.dart';
 import 'package:toodum/source/features/task/presentation/notifiers/task_notifier.dart';
 import 'package:toodum/source/features/task/presentation/state/task_state.dart';
 

@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart';
-import 'package:toodum/source/features/task/data/usecases/get_task_usecase.dart';
+import 'package:toodum/source/features/task/domain/usecases/get_task_usecase.dart';
 import 'package:toodum/source/features/task/domain/entity/task_entity.dart';
 import 'package:toodum/source/features/task/domain/repositories/task_repository.dart';
 

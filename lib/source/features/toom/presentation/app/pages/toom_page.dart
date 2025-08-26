@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:toodum/source/core/theme/theme.dart';
-import 'package:toodum/source/features/landing/presentation/providers/landing_notifier_provider.dart';
 import 'package:toodum/source/features/toom/domain/entity/toom_entity.dart';
 import 'package:toodum/source/features/toom/presentation/app/widgets/toom_widget.dart';
+import 'package:toodum/source/features/toom/presentation/providers/toom_providers.dart';
 import 'package:toodum/source/shared/widgets/app_error_widget.dart';
 import 'package:toodum/source/shared/widgets/app_loading_widget.dart';
 
@@ -21,19 +21,20 @@ final class _ToomPageState extends ConsumerState<ToomPage> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      //TODO: adicionar a leitura do provider/notifier aqui
+      ref.read(toomNotifierProvider.notifier).init();
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    final state = ref.watch(landingNotifierProvider);
+    final state = ref.watch(toomNotifierProvider);
+    // final notifier = ref.read(toomNotifierProvider.notifier);
 
     return ThemeStateBuilder(
       state: state,
       loading: const AppLoadingWidget(appBarTitle: ''),
       error: AppErrorWidget(appBarTitle: '', error: state.stateError),
-      success: ToomWidget(),
+      success: ToomWidget(tooms: state.tooms),
     );
   }
 }

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:toodum/source/core/theme/theme.dart';
+import 'package:toodum/source/features/toom/domain/entity/toom_entity.dart';
+import 'package:toodum/source/features/toom/presentation/app/widgets/toom_item_widget.dart';
 import 'package:toodum/source/shared/widgets/app_drawer_widget.dart';
 
 class ToomWidget extends StatelessWidget {
-  const ToomWidget({super.key});
+  const ToomWidget({super.key, required this.tooms});
+
+  final List<ToomEntity> tooms;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +15,7 @@ class ToomWidget extends StatelessWidget {
     final bool isWideScreen = screenWidth >= 800;
 
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       drawer: isWideScreen ? null : Drawer(child: AppDrawerWidget()),
       appBar: isWideScreen
           ? null
@@ -37,12 +41,17 @@ class ToomWidget extends StatelessWidget {
         child: Column(
           spacing: 12,
           children: [
-            Text('Toom 1', style: ThemeTypography.bold56.apply(color: ThemeColors.white),),
-            Text('Toom 2', style: ThemeTypography.bold56.apply(color: ThemeColors.white),),
-            Text('Toom 3', style: ThemeTypography.bold56.apply(color: ThemeColors.white),),
-            Text('Toom 4', style: ThemeTypography.bold56.apply(color: ThemeColors.white),),
-            Text('Toom 5', style: ThemeTypography.bold56.apply(color: ThemeColors.white),),
-            Text('Toom 6', style: ThemeTypography.bold56.apply(color: ThemeColors.white),),
+            Expanded(
+            child: ListView.separated(
+              separatorBuilder: (BuildContext context, int itemCount) => const Divider(),
+              physics: const ClampingScrollPhysics(),
+              itemCount: tooms.length,
+              itemBuilder: (_, i){
+                final toom = tooms[i];
+                return ToomItemWidget(tooms: tooms, toom: toom,);
+            }
+            ),
+          ),
           ],
         ),
       ),
