@@ -13,6 +13,8 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:get_storage/get_storage.dart' as _i792;
 import 'package:injectable/injectable.dart' as _i526;
 
+import '../network/http_client.dart' as _i1069;
+import '../network/http_client_impl.dart' as _i523;
 import 'inject.dart' as _i955;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -24,6 +26,7 @@ extension GetItInjectableX on _i174.GetIt {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
     final injectionModule = _$InjectionModule();
     gh.lazySingleton<_i792.GetStorage>(() => injectionModule.getStorage);
+    gh.lazySingleton<_i1069.IHttpClient>(() => _i523.HttpClient());
     return this;
   }
 }

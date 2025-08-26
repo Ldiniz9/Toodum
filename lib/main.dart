@@ -12,7 +12,7 @@ void main() async {
 
   await GetStorage.init();
 
-  configureDependencies(InjectEnv.impl);
+  configureDependencies(InjectEnv.mock);
 
   setUrlStrategy(PathUrlStrategy());
 
