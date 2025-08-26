@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:toodum/source/core/theme/theme.dart';
 import 'package:toodum/source/shared/shared.dart';
 
@@ -44,12 +45,15 @@ class AppDrawerWidget extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                child: ToomButtonWidget(onPressed: () {
-                  
-                } , title: 'Sair', style: ToomButtonStyle.route, icon: ThemeIcons.arrowAltLeft),
+                child: ToomButtonWidget(
+                  onPressed: () => context.go('/'),
+                  title: 'Sair',
+                  style: ToomButtonStyle.route,
+                  icon: ThemeIcons.arrowAltLeft,
+                ),
               ),
             ],
-          )
+          ),
         ],
       ),
     );
