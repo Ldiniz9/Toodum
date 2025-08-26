@@ -14,4 +14,8 @@ abstract class ToomEntity {
   num get hunger;
 
   num get clean;
+
+  num get exp;
+
+  bool get isAlive;
 }

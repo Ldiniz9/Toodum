@@ -1,6 +1,6 @@
 import 'package:toodum/source/features/toom/data/models/toom_model.dart';
 
-final mockToomModel = ToomModel(
+final toomMock = ToomModel(
   id: '001',
   name: 'Toodum',
   description: 'Um OVO de exemplo',

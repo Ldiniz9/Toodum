@@ -13,6 +13,8 @@ final class ToomModel extends ToomEntity {
     this.stage = '',
     this.hunger = 0,
     this.clean = 0,
+    this.exp = 0,
+    this.isAlive = true,
   });
 
   @override
@@ -36,6 +38,12 @@ final class ToomModel extends ToomEntity {
   @override
   final num clean;
 
+  @override
+  final num exp;
+
+  @override
+  final bool isAlive;
+
   ToomModel copyWith({
     String? id,
     String? name,
@@ -43,6 +51,8 @@ final class ToomModel extends ToomEntity {
     String? stage,
     num? hunger,
     num? clean,
+    num? exp,
+    bool? isAlive,
   }) {
     return ToomModel(
       id: id ?? this.id,
@@ -51,6 +61,8 @@ final class ToomModel extends ToomEntity {
       stage: stage ?? this.stage,
       hunger: hunger ?? this.hunger,
       clean: clean ?? this.clean,
+      exp: exp ?? this.exp,
+      isAlive: isAlive ?? this.isAlive,
     );
   }
 

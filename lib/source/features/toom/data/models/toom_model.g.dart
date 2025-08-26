@@ -14,6 +14,8 @@ ToomModel _$ToomModelFromJson(Map<String, dynamic> json) => ToomModel(
   stage: json['stage'] as String? ?? '',
   hunger: json['hunger'] as num? ?? 0,
   clean: json['clean'] as num? ?? 0,
+  exp: json['exp'] as num? ?? 0,
+  isAlive: json['isAlive'] as bool? ?? true,
 );
 
 Map<String, dynamic> _$ToomModelToJson(ToomModel instance) => <String, dynamic>{
@@ -24,4 +26,6 @@ Map<String, dynamic> _$ToomModelToJson(ToomModel instance) => <String, dynamic>{
   'stage': instance.stage,
   'hunger': instance.hunger,
   'clean': instance.clean,
+  'exp': instance.exp,
+  'isAlive': instance.isAlive,
 };
