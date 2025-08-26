@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:toodum/source/core/theme/theme.dart';
 import 'package:toodum/source/shared/shared.dart';
+import 'package:toodum/source/shared/widgets/button/toom_icon_widget.dart';
 
 final class ToomButtonWidget extends StatelessWidget {
   const ToomButtonWidget({
@@ -50,7 +51,7 @@ final class ToomButtonWidget extends StatelessWidget {
             : Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // if (icon != null) ...[ThemeIconWidget(icon: icon!, size: 16)],
+                  if (icon != null) ...[ToomIconWidget(icon: icon!, size: 16)],
                   Text(title, style: textStyle),
                 ],
               ),
@@ -120,6 +121,13 @@ final class ToomButtonWidget extends StatelessWidget {
         return TextButton.styleFrom(
           backgroundColor: ThemeColors.red,
           foregroundColor: Colors.white,
+          shape: commonShape,
+          padding: padding,
+        );
+      case ToomButtonStyle.route:
+        return TextButton.styleFrom(
+          backgroundColor: Colors.transparent,
+          foregroundColor: ThemeColors.secondary,
           shape: commonShape,
           padding: padding,
         );

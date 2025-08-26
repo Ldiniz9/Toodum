@@ -46,7 +46,7 @@ class AppDrawerWidget extends StatelessWidget {
               Expanded(
                 child: ToomButtonWidget(onPressed: () {
                   
-                } , title: 'Sair', style: ToomButtonStyle.secondary,),
+                } , title: 'Sair', style: ToomButtonStyle.route, icon: ThemeIcons.arrowAltLeft),
               ),
             ],
           )

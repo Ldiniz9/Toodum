@@ -5,4 +5,5 @@ enum ToomButtonStyle {
   outlinedSecondary,
   disabled,
   warning,
+  route,
 }
