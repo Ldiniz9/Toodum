@@ -9,6 +9,7 @@ final class ToomModel extends ToomEntity {
     this.id,
     this.name = '',
     this.description = '',
+    this.type = '',
     this.skin = '',
     this.stage = '',
     this.hunger = 0,
@@ -25,6 +26,9 @@ final class ToomModel extends ToomEntity {
 
   @override
   final String description;
+
+  @override
+  final String type;
 
   @override
   final String skin;
@@ -48,6 +52,7 @@ final class ToomModel extends ToomEntity {
     String? id,
     String? name,
     String? description,
+    String? type,
     String? stage,
     num? hunger,
     num? clean,
@@ -58,6 +63,7 @@ final class ToomModel extends ToomEntity {
       id: id ?? this.id,
       name: name ?? this.name,
       description: description ?? this.description,
+      type: type ?? this.type,
       stage: stage ?? this.stage,
       hunger: hunger ?? this.hunger,
       clean: clean ?? this.clean,

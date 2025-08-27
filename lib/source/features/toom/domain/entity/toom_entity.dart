@@ -7,6 +7,8 @@ abstract class ToomEntity {
 
   String get description;
 
+  String get type;
+
   String get skin;
 
   String get stage;

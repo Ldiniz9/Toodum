@@ -28,6 +28,7 @@ final class ToomItemWidget extends StatelessWidget {
               Text('ToomDex: ${toom.id.toString()}'),
               Text('Nome: ${toom.name}'),
               Text('Descrição: ${toom.description}'),
+              Text('Tipo: ${toom.type}'),
               Text('Estágio: ${toom.stage}'),
               Text('Fome: ${toom.hunger.toString()}'),
               Text('Limpeza: ${toom.clean.toString()}'),
