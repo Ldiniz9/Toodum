@@ -16,18 +16,13 @@ final class TaskWidget extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      drawer: isWideScreen ? null : Drawer(child: AppDrawerWidget()),
+      bottomNavigationBar: AppNavigationWidget(),
+      endDrawer: isWideScreen ? null : Drawer(width: 200, child: AppDrawerWidget()),
       appBar: isWideScreen
           ? null
           : AppBar(
+              leading: Spacer(),
               backgroundColor: Colors.black,
-              leading: Builder(
-                builder: (context) => IconButton(
-                  color: Colors.white,
-                  icon: const Icon(Icons.menu),
-                  onPressed: () => Scaffold.of(context).openDrawer(),
-                ),
-              ),
               title: Center(
                 child: Text(
                   'TOODUM',
@@ -36,7 +31,15 @@ final class TaskWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              actions: [SizedBox(width: 48)],
+              actions: [
+                Builder(
+                  builder: (context) => IconButton(
+                    color: Colors.white,
+                    icon: const Icon(Icons.settings),
+                    onPressed: () => Scaffold.of(context).openEndDrawer(),
+                  ),
+                ),
+              ],
             ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),

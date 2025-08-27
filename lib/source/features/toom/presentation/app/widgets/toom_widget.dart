@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:toodum/source/core/theme/theme.dart';
 import 'package:toodum/source/features/toom/domain/entity/toom_entity.dart';
 import 'package:toodum/source/features/toom/presentation/app/widgets/toom_item_widget.dart';
-import 'package:toodum/source/shared/widgets/app_drawer_widget.dart';
+import 'package:toodum/source/shared/shared.dart';
 
 class ToomWidget extends StatelessWidget {
   const ToomWidget({super.key, required this.tooms});
@@ -16,18 +16,13 @@ class ToomWidget extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      drawer: isWideScreen ? null : Drawer(child: AppDrawerWidget()),
+      bottomNavigationBar: AppNavigationWidget(),
+      endDrawer: isWideScreen ? null : Drawer(width: 200, child: AppDrawerWidget()),
       appBar: isWideScreen
           ? null
           : AppBar(
+              leading: Spacer(),
               backgroundColor: Colors.black,
-              leading: Builder(
-                builder: (context) => IconButton(
-                  color: Colors.white,
-                  icon: const Icon(Icons.menu),
-                  onPressed: () => Scaffold.of(context).openDrawer(),
-                ),
-              ),
               title: Center(
                 child: Text(
                   'TOODUM',
@@ -36,7 +31,15 @@ class ToomWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              actions: [SizedBox(width: 48)],
+              actions: [
+                Builder(
+                  builder: (context) => IconButton(
+                    color: Colors.white,
+                    icon: const Icon(Icons.settings),
+                    onPressed: () => Scaffold.of(context).openEndDrawer(),
+                  ),
+                ),
+              ],
             ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),

@@ -11,7 +11,7 @@ class AppDrawerWidget extends StatelessWidget {
     final currentRoute = GoRouterState.of(context).uri.toString();
 
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 48, vertical: 48),
+      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 48),
       color: Colors.black,
       height: double.infinity,
       child: Column(
@@ -24,7 +24,7 @@ class AppDrawerWidget extends StatelessWidget {
             children: [
               Text(
                 'TOODUM',
-                style: ThemeTypography.bold56.apply(
+                style: ThemeTypography.bold42.apply(
                   color: Colors.white,
                 ),
               ),

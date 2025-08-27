@@ -112,6 +112,12 @@ final class ThemeTypography {
     fontFamily: ThemeFontFamilies.poppins,
   );
 
+  static const bold42 = TextStyle(
+    fontWeight: FontWeight.w700,
+    fontSize: 42,
+    fontFamily: ThemeFontFamilies.poppins,
+  );
+
   static const bold56 = TextStyle(
     fontWeight: FontWeight.w700,
     fontSize: 56,
