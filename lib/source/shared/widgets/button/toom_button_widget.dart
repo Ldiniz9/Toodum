@@ -12,13 +12,14 @@ final class ToomButtonWidget extends StatelessWidget {
     this.backgroundColor,
     this.foregroundColor,
     this.style = ToomButtonStyle.primary,
-    this.padding = const EdgeInsets.all(12),
-    this.textStyle = ThemeTypography.bold14,
+    this.padding = const EdgeInsets.symmetric(horizontal: 12),
+    this.textStyle = ThemeTypography.bold20,
     this.width = double.infinity,
-    this.height = 48,
+    this.height = 36,
     this.borderRadius = 18,
     this.enabled = true,
     this.isLoading = false,
+    this.isHere = false,
   });
 
   final VoidCallback onPressed;
@@ -34,12 +35,16 @@ final class ToomButtonWidget extends StatelessWidget {
   final double borderRadius;
   final bool enabled;
   final bool isLoading;
+  final bool isHere;
 
   @override
   Widget build(BuildContext context) {
-    final buttonStyle = _resolveStyle(style, enabled);
+    final buttonStyle = _resolveStyle(style, enabled).copyWith(
+      minimumSize: WidgetStateProperty.all(Size(width, height)),
+    );
 
     return SizedBox(
+      width: width,
       height: height,
       child: TextButton(
         style: buttonStyle,
@@ -49,9 +54,9 @@ final class ToomButtonWidget extends StatelessWidget {
         child: isLoading
             ? CircularProgressIndicator(color: Colors.white)
             : Row(
-                mainAxisSize: MainAxisSize.min,
+                mainAxisSize: MainAxisSize.max,
                 children: [
-                  if (icon != null) ...[ToomIconWidget(icon: icon!, size: 16)],
+                  if (icon != null) ...[ToomIconWidget(icon: icon!, size: 24)],
                   Text(title, style: textStyle),
                 ],
               ),
@@ -126,7 +131,7 @@ final class ToomButtonWidget extends StatelessWidget {
         );
       case ToomButtonStyle.route:
         return TextButton.styleFrom(
-          backgroundColor: Colors.transparent,
+          backgroundColor: isHere ? ThemeColors.purpleDarkLight : Colors.transparent,
           foregroundColor: ThemeColors.secondary,
           shape: commonShape,
           padding: padding,

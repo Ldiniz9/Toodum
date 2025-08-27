@@ -15,12 +15,12 @@ final class TaskWidget extends StatelessWidget {
     final bool isWideScreen = screenWidth >= 800;
 
     return Scaffold(
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.white,
       drawer: isWideScreen ? null : Drawer(child: AppDrawerWidget()),
       appBar: isWideScreen
           ? null
           : AppBar(
-              backgroundColor: ThemeColors.primary,
+              backgroundColor: Colors.black,
               leading: Builder(
                 builder: (context) => IconButton(
                   color: Colors.white,
@@ -38,19 +38,24 @@ final class TaskWidget extends StatelessWidget {
               ),
               actions: [SizedBox(width: 48)],
             ),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              physics: const ClampingScrollPhysics(),
-              itemCount: tasks.length,
-              itemBuilder: (_, i){
-                final task = tasks[i];
-                return TaskItemWidget(tasks: tasks, task: task,);
-            }
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          children: [
+            Expanded(
+              child: ListView.separated(
+                separatorBuilder: (BuildContext context, int itemCount) =>
+                    const Divider(),
+                physics: const ClampingScrollPhysics(),
+                itemCount: tasks.length,
+                itemBuilder: (_, i) {
+                  final task = tasks[i];
+                  return TaskItemWidget(tasks: tasks, task: task);
+                },
+              ),
             ),
-          )
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -20,7 +20,7 @@ class ToomWidget extends StatelessWidget {
       appBar: isWideScreen
           ? null
           : AppBar(
-              backgroundColor: ThemeColors.primary,
+              backgroundColor: Colors.black,
               leading: Builder(
                 builder: (context) => IconButton(
                   color: Colors.white,
@@ -31,27 +31,29 @@ class ToomWidget extends StatelessWidget {
               title: Center(
                 child: Text(
                   'TOODUM',
-                  style: ThemeTypography.bold56.apply(color: ThemeColors.secondary),
+                  style: ThemeTypography.bold56.apply(
+                    color: ThemeColors.secondary,
+                  ),
                 ),
               ),
               actions: [SizedBox(width: 48)],
             ),
       body: Padding(
-        padding: const EdgeInsets.all(24.0),
+        padding: const EdgeInsets.all(12.0),
         child: Column(
-          spacing: 12,
           children: [
             Expanded(
-            child: ListView.separated(
-              separatorBuilder: (BuildContext context, int itemCount) => const Divider(),
-              physics: const ClampingScrollPhysics(),
-              itemCount: tooms.length,
-              itemBuilder: (_, i){
-                final toom = tooms[i];
-                return ToomItemWidget(tooms: tooms, toom: toom,);
-            }
+              child: ListView.separated(
+                separatorBuilder: (BuildContext context, int itemCount) =>
+                    const Divider(),
+                physics: const ClampingScrollPhysics(),
+                itemCount: tooms.length,
+                itemBuilder: (_, i) {
+                  final toom = tooms[i];
+                  return ToomItemWidget(tooms: tooms, toom: toom);
+                },
+              ),
             ),
-          ),
           ],
         ),
       ),

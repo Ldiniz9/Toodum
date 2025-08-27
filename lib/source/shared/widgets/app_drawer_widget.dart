@@ -8,51 +8,59 @@ class AppDrawerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final currentRoute = GoRouterState.of(context).uri.toString();
+
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 48),
+      padding: EdgeInsets.symmetric(horizontal: 48, vertical: 48),
       color: Colors.black,
       height: double.infinity,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        mainAxisSize: MainAxisSize.max,
         spacing: 12,
         children: [
-          Text(
-            'TOODUM',
-            style: ThemeTypography.bold56.apply(color: ThemeColors.primary),
-          ),
-          const SizedBox(height: 24),
-          Text(
-            'Toom 2',
-            style: ThemeTypography.bold56.apply(color: ThemeColors.white),
-          ),
-          Text(
-            'Toom 3',
-            style: ThemeTypography.bold56.apply(color: ThemeColors.white),
-          ),
-          Text(
-            'Toom 4',
-            style: ThemeTypography.bold56.apply(color: ThemeColors.white),
-          ),
-          Text(
-            'Toom 5',
-            style: ThemeTypography.bold56.apply(color: ThemeColors.white),
-          ),
-          Text(
-            'Toom 6',
-            style: ThemeTypography.bold56.apply(color: ThemeColors.white),
-          ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Expanded(
-                child: ToomButtonWidget(
-                  onPressed: () => context.go('/'),
-                  title: 'Sair',
-                  style: ToomButtonStyle.route,
-                  icon: ThemeIcons.arrowAltLeft,
+              Text(
+                'TOODUM',
+                style: ThemeTypography.bold56.apply(
+                  color: Colors.white,
                 ),
               ),
             ],
+          ),
+          const SizedBox(height: 24),
+          SizedBox(
+            height: 36,
+            child: ToomButtonWidget(
+              onPressed: () => context.go('/task'),
+              title: 'Tarefas',
+              style: ToomButtonStyle.route,
+              icon: ThemeIcons.chart,
+              isHere: currentRoute == '/task',
+            ),
+          ),
+          SizedBox(height: 12),
+          SizedBox(
+            height: 36,
+            child: ToomButtonWidget(
+              onPressed: () => context.go('/toom'),
+              title: 'Tooms',
+              style: ToomButtonStyle.route,
+              icon: ThemeIcons.happy,
+              isHere: currentRoute == '/toom',
+            ),
+          ),
+          const Spacer(flex: 4),
+          SizedBox(
+            height: 36,
+            child: ToomButtonWidget(
+              onPressed: () => context.go('/'),
+              title: 'Sair',
+              style: ToomButtonStyle.route,
+              icon: ThemeIcons.arrowAltLeft,
+            ),
           ),
         ],
       ),

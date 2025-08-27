@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toodum/source/core/theme/style/theme_colors.dart';
 import 'package:toodum/source/features/task/domain/entity/task_entity.dart';
 
 final class TaskItemWidget extends StatelessWidget {
@@ -9,19 +10,27 @@ final class TaskItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(tasks.length.toString()),
-        Text(task.id.toString()),
-        Text(task.name),
-        Text(task.description.toString()),
-        Text(task.duration),
-        Text(task.date),
-        Text(task.difficulty.name),
-        Text(task.type.name),
-        Text(task.completed.toString()),
-        const SizedBox(height: 24,),
-      ],
+    return Container(
+      height: 200,
+      padding: EdgeInsets.symmetric(horizontal:24),
+      decoration: BoxDecoration(
+        color: ThemeColors.secondary,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(task.id.toString()),
+          Text(task.name),
+          Text(task.description.toString()),
+          Text(task.duration),
+          Text(task.date),
+          Text(task.difficulty.name),
+          Text(task.type.name),
+          Text(task.completed.toString()),
+        ],
+      ),
     );
   }
 }
