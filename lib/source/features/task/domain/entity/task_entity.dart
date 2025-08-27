@@ -5,13 +5,13 @@ abstract class TaskEntity {
 
   String? get id;
 
-  String get name;
+  String get title;
 
   String get description;
 
-  String get duration;
-
   String get date;
+
+  TaskDuration get duration;
 
   TaskDifficulty get difficulty;
 

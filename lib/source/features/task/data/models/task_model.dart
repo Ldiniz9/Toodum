@@ -5,15 +5,16 @@ part 'task_model.g.dart';
 
 enum TaskDifficulty { easy, medium, hard }
 enum TaskType { recurrent, sole, other }
+enum TaskDuration { daily, weekly, monthly, annual }
 
 @JsonSerializable(createToJson: true)
 final class TaskModel extends TaskEntity{
   const TaskModel({
     this.id,
-    this.name = '',
+    this.title = '',
     this.description = '',
-    this.duration = '',
     this.date = '',
+    this.duration = TaskDuration.daily,
     this.difficulty = TaskDifficulty.easy,
     this.type = TaskType.sole,
     this.completed = false,
@@ -23,16 +24,16 @@ final class TaskModel extends TaskEntity{
   final String? id;
 
   @override
-  final String name;
+  final String title;
 
   @override
   final String description;
 
   @override
-  final String duration;
+  final String date;
 
   @override
-  final String date;
+  final TaskDuration duration;
 
   @override
   final TaskDifficulty difficulty;
@@ -45,19 +46,19 @@ final class TaskModel extends TaskEntity{
 
   TaskModel copyWith({
     String? id,
-    String? name,
+    String? title,
     String? description,
-    String? duration,
     String? date,
+    TaskDuration? duration,
     TaskDifficulty? difficulty,
     TaskType? type,
     bool? completed,
   }) {
     return TaskModel(
       id: id ?? this.id,
-      name: name ?? this.name,
-      description: description ?? this.description,
+      title: title ?? this.title,
       duration: duration ?? this.duration,
+      description: description ?? this.description,
       date: date ?? this.date,
       difficulty: difficulty ?? this.difficulty,
       type: type ?? this.type,

@@ -8,10 +8,12 @@ part of 'task_model.dart';
 
 TaskModel _$TaskModelFromJson(Map<String, dynamic> json) => TaskModel(
   id: json['id'] as String?,
-  name: json['name'] as String? ?? '',
+  title: json['title'] as String? ?? '',
   description: json['description'] as String? ?? '',
-  duration: json['duration'] as String? ?? '',
   date: json['date'] as String? ?? '',
+  duration:
+      $enumDecodeNullable(_$TaskDurationEnumMap, json['duration']) ??
+      TaskDuration.daily,
   difficulty:
       $enumDecodeNullable(_$TaskDifficultyEnumMap, json['difficulty']) ??
       TaskDifficulty.easy,
@@ -21,13 +23,20 @@ TaskModel _$TaskModelFromJson(Map<String, dynamic> json) => TaskModel(
 
 Map<String, dynamic> _$TaskModelToJson(TaskModel instance) => <String, dynamic>{
   'id': instance.id,
-  'name': instance.name,
+  'title': instance.title,
   'description': instance.description,
-  'duration': instance.duration,
   'date': instance.date,
+  'duration': _$TaskDurationEnumMap[instance.duration]!,
   'difficulty': _$TaskDifficultyEnumMap[instance.difficulty]!,
   'type': _$TaskTypeEnumMap[instance.type]!,
   'completed': instance.completed,
+};
+
+const _$TaskDurationEnumMap = {
+  TaskDuration.daily: 'daily',
+  TaskDuration.weekly: 'weekly',
+  TaskDuration.monthly: 'monthly',
+  TaskDuration.annual: 'annual',
 };
 
 const _$TaskDifficultyEnumMap = {

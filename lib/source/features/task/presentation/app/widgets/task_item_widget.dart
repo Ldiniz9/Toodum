@@ -22,9 +22,9 @@ final class TaskItemWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(task.id.toString()),
-          Text(task.name),
+          Text(task.title),
           Text(task.description.toString()),
-          Text(task.duration),
+          Text(task.duration.toString()),
           Text(task.date),
           Text(task.difficulty.name),
           Text(task.type.name),
