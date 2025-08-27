@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:toodum/source/core/theme/theme.dart';
 
-final class ToomIconWidget extends StatelessWidget {
-  const ToomIconWidget({
+final class ToodumIconWidget extends StatelessWidget {
+  const ToodumIconWidget({
     super.key,
     required this.icon,
     this.onPressed,

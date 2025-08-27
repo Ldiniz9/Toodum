@@ -33,10 +33,10 @@ class AppEndDrawerWidget extends StatelessWidget {
           const SizedBox(height: 24),
           SizedBox(
             height: 36,
-            child: ToomButtonWidget(
+            child: ToodumButtonWidget(
               onPressed: () => context.go('/task'),
               title: 'Tarefas',
-              style: ToomButtonStyle.route,
+              style: ToodumButtonStyle.route,
               icon: ThemeIcons.chart,
               isHere: currentRoute == '/task',
             ),
@@ -44,10 +44,10 @@ class AppEndDrawerWidget extends StatelessWidget {
           SizedBox(height: 12),
           SizedBox(
             height: 36,
-            child: ToomButtonWidget(
+            child: ToodumButtonWidget(
               onPressed: () => context.go('/toom'),
               title: 'Tooms',
-              style: ToomButtonStyle.route,
+              style: ToodumButtonStyle.route,
               icon: ThemeIcons.happy,
               isHere: currentRoute == '/toom',
             ),
@@ -55,10 +55,10 @@ class AppEndDrawerWidget extends StatelessWidget {
           const Spacer(flex: 4),
           SizedBox(
             height: 36,
-            child: ToomButtonWidget(
+            child: ToodumButtonWidget(
               onPressed: () => context.go('/'),
               title: 'Sair',
-              style: ToomButtonStyle.route,
+              style: ToodumButtonStyle.route,
               icon: ThemeIcons.arrowAltLeft,
             ),
           ),

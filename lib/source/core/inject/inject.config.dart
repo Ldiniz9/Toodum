@@ -20,8 +20,8 @@ import '../../features/task/data/repositories/task_repository_impl.dart'
     as _i325;
 import '../../features/task/domain/repositories/task_repository.dart' as _i81;
 import '../../features/task/domain/usecases/create_task_usecase.dart' as _i292;
-import '../../features/task/domain/usecases/create_task_usecase_impl%20copy.dart'
-    as _i954;
+import '../../features/task/domain/usecases/create_task_usecase_impl.dart'
+    as _i100;
 import '../../features/task/domain/usecases/get_task_usecase.dart' as _i47;
 import '../../features/task/domain/usecases/get_task_usecase_impl.dart'
     as _i474;
@@ -67,11 +67,11 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i81.TaskRepository>(
       () => _i325.TaskRepositoryImpl(gh<_i202.TaskDataSource>()),
     );
+    gh.factory<_i292.CreateTaskUseCase>(
+      () => _i100.CreateTaskUseCaseImpl(gh<_i81.TaskRepository>()),
+    );
     gh.factory<_i47.GetTaskUseCase>(
       () => _i474.GetTaskUseCaseImpl(gh<_i81.TaskRepository>()),
-    );
-    gh.factory<_i292.CreateTaskUseCase>(
-      () => _i954.CreateTaskUseCaseImpl(gh<_i81.TaskRepository>()),
     );
     return this;
   }

@@ -1,4 +1,4 @@
-enum ToomButtonStyle {
+enum ToodumButtonStyle {
   primary,
   secondary,
   outlinedPrimary,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:toodum/source/core/theme/style/theme_colors.dart';
 import 'package:toodum/source/features/task/presentation/controllers/task_form_controllers.dart';
 import 'package:toodum/source/shared/shared.dart';
+import 'package:toodum/source/shared/widgets/toodum_input_text_widget.dart';
 
 final class TaskCreateWidget extends StatelessWidget {
   const TaskCreateWidget({
@@ -26,10 +27,18 @@ final class TaskCreateWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ToomButtonWidget(
-            onPressed: onCreatePressed,
-            title: 'CRIAR TASK',
+          Container(
+            decoration: BoxDecoration(
+              color: ThemeColors.purpleLight,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: ToodumInputWidget(
+              hint: 'teste',
+              controller: taskControllers.titleController,
+              onChanged: (p0) {},
+            ),
           ),
+          ToodumButtonWidget(onPressed: onCreatePressed, title: 'CRIAR TASK'),
         ],
       ),
     );
