@@ -3,8 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:toodum/source/core/theme/theme.dart';
 import 'package:toodum/source/shared/shared.dart';
 
-class AppDrawerWidget extends StatelessWidget {
-  const AppDrawerWidget({super.key});
+class AppEndDrawerWidget extends StatelessWidget {
+  const AppEndDrawerWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

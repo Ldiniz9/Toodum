@@ -17,7 +17,7 @@ final class TaskWidget extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       bottomNavigationBar: AppNavigationWidget(),
-      endDrawer: isWideScreen ? null : Drawer(width: 200, child: AppDrawerWidget()),
+      endDrawer: isWideScreen ? null : Drawer(width: 200, child: AppEndDrawerWidget()),
       appBar: isWideScreen
           ? null
           : AppBar(
