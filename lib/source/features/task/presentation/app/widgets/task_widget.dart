@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:toodum/source/core/theme/theme.dart';
 import 'package:toodum/source/features/task/domain/entity/task_entity.dart';
+import 'package:toodum/source/features/task/presentation/app/widgets/task_create_widget.dart';
 import 'package:toodum/source/features/task/presentation/app/widgets/task_item_widget.dart';
+import 'package:toodum/source/features/task/presentation/controllers/task_form_controllers.dart';
 import 'package:toodum/source/shared/shared.dart';
 
 final class TaskWidget extends StatelessWidget {
-  const TaskWidget({super.key, required this.tasks});
+  const TaskWidget({super.key, required this.tasks, required this.taskControllers, required this.onCreatePressed,});
 
   final List<TaskEntity> tasks;
+  final TaskFormControllers taskControllers;
+  final VoidCallback onCreatePressed;
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +49,8 @@ final class TaskWidget extends StatelessWidget {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
+            TaskCreateWidget(taskControllers: taskControllers, onCreatePressed: onCreatePressed),
+            const SizedBox(height: 24,),
             Expanded(
               child: ListView.separated(
                 separatorBuilder: (BuildContext context, int itemCount) =>
