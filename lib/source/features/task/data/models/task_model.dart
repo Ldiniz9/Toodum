@@ -14,6 +14,7 @@ final class TaskModel extends TaskEntity{
     this.title = '',
     this.description = '',
     this.date = '',
+    this.timer = '',
     this.duration = TaskDuration.daily,
     this.difficulty = TaskDifficulty.easy,
     this.type = TaskType.sole,
@@ -28,9 +29,12 @@ final class TaskModel extends TaskEntity{
 
   @override
   final String description;
-
+  
   @override
   final String date;
+
+  @override
+  final String timer;
 
   @override
   final TaskDuration duration;
@@ -49,6 +53,7 @@ final class TaskModel extends TaskEntity{
     String? title,
     String? description,
     String? date,
+    String? timer,
     TaskDuration? duration,
     TaskDifficulty? difficulty,
     TaskType? type,
@@ -60,6 +65,7 @@ final class TaskModel extends TaskEntity{
       duration: duration ?? this.duration,
       description: description ?? this.description,
       date: date ?? this.date,
+      timer: timer ?? this.timer,
       difficulty: difficulty ?? this.difficulty,
       type: type ?? this.type,
       completed: completed ?? this.completed,

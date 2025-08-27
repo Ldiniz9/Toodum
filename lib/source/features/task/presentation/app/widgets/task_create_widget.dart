@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:toodum/source/core/theme/style/theme_colors.dart';
 import 'package:toodum/source/features/task/domain/entity/task_entity.dart';
+import 'package:toodum/source/features/task/presentation/controllers/task_form_controllers.dart';
 
-final class TaskItemWidget extends StatelessWidget {
-  const TaskItemWidget({super.key, required this.tasks, required this.task});
+final class TaskCreateWidget extends StatelessWidget {
+  const TaskCreateWidget({super.key, required this.tasks, required this.task, required this.taskControllers});
 
   final List<TaskEntity> tasks;
   final TaskEntity task;
+  final TaskFormControllers taskControllers;
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +23,11 @@ final class TaskItemWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(task.id.toString()),
+          ElevatedButton(onPressed: () {},child: Container(child:  Text(task.id.toString()),),),
           Text(task.title),
           Text(task.description.toString()),
+          Text(task.duration.toString()),
           Text(task.date),
-          Text(task.duration.name),
           Text(task.difficulty.name),
           Text(task.type.name),
           Text(task.completed.toString()),

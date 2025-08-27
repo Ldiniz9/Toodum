@@ -11,6 +11,8 @@ abstract class TaskEntity {
 
   String get date;
 
+  String get timer;
+
   TaskDuration get duration;
 
   TaskDifficulty get difficulty;

@@ -11,6 +11,7 @@ TaskModel _$TaskModelFromJson(Map<String, dynamic> json) => TaskModel(
   title: json['title'] as String? ?? '',
   description: json['description'] as String? ?? '',
   date: json['date'] as String? ?? '',
+  timer: json['timer'] as String? ?? '',
   duration:
       $enumDecodeNullable(_$TaskDurationEnumMap, json['duration']) ??
       TaskDuration.daily,
@@ -26,6 +27,7 @@ Map<String, dynamic> _$TaskModelToJson(TaskModel instance) => <String, dynamic>{
   'title': instance.title,
   'description': instance.description,
   'date': instance.date,
+  'timer': instance.timer,
   'duration': _$TaskDurationEnumMap[instance.duration]!,
   'difficulty': _$TaskDifficultyEnumMap[instance.difficulty]!,
   'type': _$TaskTypeEnumMap[instance.type]!,
