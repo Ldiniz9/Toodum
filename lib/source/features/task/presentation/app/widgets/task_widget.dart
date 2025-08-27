@@ -49,7 +49,7 @@ final class TaskWidget extends StatelessWidget {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
-            TaskCreateWidget(taskControllers: taskControllers, onCreatePressed: onCreatePressed),
+            Expanded(child: TaskCreateWidget(taskControllers: taskControllers, onCreatePressed: onCreatePressed)),
             const SizedBox(height: 24,),
             Expanded(
               child: ListView.separated(

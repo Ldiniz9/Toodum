@@ -7,7 +7,7 @@ class ToodumInputWidget extends StatelessWidget {
   const ToodumInputWidget({
     super.key,
     this.label,
-    required this.hint,
+    this.hint,
     required this.controller,
     this.obscureText = false,
     this.enabled = true,
@@ -21,7 +21,7 @@ class ToodumInputWidget extends StatelessWidget {
   });
 
   final String? label;
-  final String hint;
+  final String? hint;
   final TextEditingController controller;
   final bool enabled;
   final bool obscureText;
@@ -39,7 +39,6 @@ class ToodumInputWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (label != null) Text(label!, style: ThemeTypography.semiBold12),
-        const SizedBox(height: 8),
         TextFormField(
           enabled: enabled,
           controller: controller,

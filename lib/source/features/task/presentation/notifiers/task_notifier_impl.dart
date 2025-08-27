@@ -43,4 +43,12 @@ final class TaskNotifierImpl extends StateNotifier<TaskState> implements TaskNot
 
     return true;
   }
+
+  @override
+  void updateField(TaskModel Function(TaskModel) update) {
+    final current = state.task;
+    final updated = update(current as TaskModel);
+
+    state = state.copyWith(task: updated, stateError: '');
+  }
 }
